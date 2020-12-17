@@ -1,0 +1,26 @@
+camilo@EZRA-OMEN:~$ docker run -d devopsdockeruh/exec_bash_exercise
+971b82af908eff88ddb51c967547a8a06dff999ae45a2f90040c7bbe280e7576
+camilo@EZRA-OMEN:~$ docker container ls
+CONTAINER ID   IMAGE                               COMMAND                  CREATED          STATUS          PORTS     NAMES
+971b82af908e   devopsdockeruh/exec_bash_exercise   "docker-entrypoint.s…"   4 seconds ago    Up 3 seconds              fervent_heisenberg
+21009f8bfa58   ubuntu:16.04                        "sh -c 'while true; …"   35 minutes ago   Up 35 minutes             looper-it
+camilo@EZRA-OMEN:~$ docker exec -it fervent_heisenberg bash
+root@971b82af908e:/usr/app# tail -f ./logs.txt
+Thu, 17 Dec 2020 22:04:29 GMT
+Secret message is:
+"Docker is easy"
+Thu, 17 Dec 2020 22:04:35 GMT
+Thu, 17 Dec 2020 22:04:38 GMT
+Thu, 17 Dec 2020 22:04:41 GMT
+Thu, 17 Dec 2020 22:04:44 GMT
+Secret message is:
+"Docker is easy"
+Thu, 17 Dec 2020 22:04:50 GMT
+Thu, 17 Dec 2020 22:04:53 GMT
+Thu, 17 Dec 2020 22:04:56 GMT
+Thu, 17 Dec 2020 22:04:59 GMT
+Secret message is:
+"Docker is easy"
+^C
+root@971b82af908e:/usr/app# exit
+exit
